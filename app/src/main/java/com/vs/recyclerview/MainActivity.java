@@ -1,14 +1,14 @@
 package com.vs.recyclerview;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -30,12 +30,11 @@ public class MainActivity extends AppCompatActivity {
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!editTextInsert.getText().toString().equals("")){
+                if (!editTextInsert.getText().toString().equals("")) {
                     int position = Integer.parseInt(editTextInsert.getText().toString());
                     insertItem(position);
-                }
-                else {
-                    Toast.makeText(MainActivity.this,"Enter the Position",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Enter the Position", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -43,12 +42,11 @@ public class MainActivity extends AppCompatActivity {
         buttonRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!editTextRemove.getText().toString().equals("")){
+                if (!editTextRemove.getText().toString().equals("")) {
                     int position = Integer.parseInt(editTextRemove.getText().toString());
                     removeItem(position);
-                }
-                else {
-                    Toast.makeText(MainActivity.this,"Enter the Position",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Enter the Position", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -66,9 +64,8 @@ public class MainActivity extends AppCompatActivity {
         if (mAdapter.getItemCount() > position) {
             mExampleList.remove(position);
             mAdapter.notifyItemRemoved(position);
-        }
-        else {
-            Toast.makeText(MainActivity.this,"Enter a valid position",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, "Enter a valid position", Toast.LENGTH_SHORT).show();
         }
     }
 
